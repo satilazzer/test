@@ -13,7 +13,7 @@ def send_welcome(message):
 
 @bot.message_handler()
 def commit_token(message):
-    con = sqlite3.connect('DubaiTutor/db.sqlite3')
+    con = sqlite3.connect('db.sqlite3')
     cursor = con.cursor()
     print("Database created and Successfully Connected to SQLite")
     if cursor.execute(f"SELECT token_code FROM main_token WHERE token_code='{message.text}'"):
